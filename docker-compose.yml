@@ -28,3 +28,115 @@ services:
       replicas: 1
       restart_policy:
         condition: on-failure
+  college:
+#    build: ./college
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/college:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20003:20003"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  declaration-page:
+#    build: ./declaration-page
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/declaration_page:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20004:20004"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  formula:
+#    build: ./formula
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/formula:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20017:20017"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  grade:
+#    build: ./grade
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/grade:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20005:20005"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  img:
+#    build: ./img
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/img:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20006:20006"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  keywords:
+#    build: ./keywords
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/keywords:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20007:20007"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  list:
+#    build: ./list
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/list:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20008:20008"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  major:
+#    build: ./major
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/major:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20009:20009"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
