@@ -1,4 +1,30 @@
 version: '3'
 services:
-  redis:
-    image: redis
+  abstract:
+#    build: ./abstract
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/abstract:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20002:20002"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  body:
+#    build: ./body
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/body:v2.0
+    command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
+    restart: always
+    ports: # 指定端口映射
+      - "20001:20001"
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+      replicas: 1
+      restart_policy:
+        condition: on-failure
