@@ -8,13 +8,9 @@ RUN rabbitmq-plugins enable rabbitmq_management
 RUN rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 
 # 创建RabbitMQ管理员
-RUN rabbitmqctl add_user admin admin
-RUN rabbitmqctl set_user_tags admin administrator
-RUN rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
-
-# 打开管理页面远程访问
-RUN rabbitmq-plugins enable rabbitmq_management_agent
-RUN rabbitmqctl stop_app && rabbitmqctl start_app --management
+RUN rabbitmqctl add_user root 123123
+RUN rabbitmqctl set_user_tags root administrator
+RUN rabbitmqctl set_permissions -p / root ".*" ".*" ".*"
 
 EXPOSE 5672
 EXPOSE 15672
