@@ -2,7 +2,7 @@ version: '3'
 services:
   abstract:
 #    build: ./abstract
-    image: registry.cn-shanghai.aliyuncs.com/cmgzs/abstract:${TAG}
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/abstract:v2.0
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
     ports: # 指定端口映射
@@ -16,7 +16,7 @@ services:
         condition: on-failure
   body:
 #    build: ./body
-    image: registry.cn-shanghai.aliyuncs.com/cmgzs/body:${TAG}
+    image: registry.cn-shanghai.aliyuncs.com/cmgzs/body:v2.0
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
     ports: # 指定端口映射
