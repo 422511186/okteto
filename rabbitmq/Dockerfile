@@ -1,4 +1,4 @@
-FROM rabbitmq:3-management
+FROM rabbitmq:3.8-management
 
 
 # 添加插件到指定目录 可按照此方式自行扩展其他插件
