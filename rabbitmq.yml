@@ -4,17 +4,16 @@ services:
   rabbit:
     build:
       context: ./rabbitmq
+    image: rabbit:hzy
     hostname: rabbit
-    image: rabbitmq:3-management
-    container_name: rabbitmq
+    container_name: "wycs_rabbitmq3.8"
     restart: always
     ports:
       - "5672:5672"
       - "15672:15672"
     environment:
-      TZ: Asia/Shanghai
-      RABBITMQ_DEFAULT_USER: rabbit
-      RABBITMQ_DEFAULT_PASS: 123456
+      - RABBITMQ_DEFAULT_USER=root
+      - RABBITMQ_DEFAULT_PASS=123123
     volumes:
       - ./data:/var/lib/rabbitmq
 
