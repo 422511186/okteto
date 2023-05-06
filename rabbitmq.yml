@@ -2,8 +2,8 @@ version: '3'
 
 services:
   rabbit:
-    build:
-      context: ./rabbitmq
+#    build:
+#      context: ./rabbitmq
     image: rabbit:hzy
     hostname: rabbit
     container_name: "wycs_rabbitmq3.8"
