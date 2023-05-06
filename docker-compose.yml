@@ -1,7 +1,7 @@
 version: '3'
 services:
   abstract:
-    build: ./abstract
+#    build: ./abstract
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/abstract:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -15,7 +15,7 @@ services:
       restart_policy:
         condition: on-failure
   body:
-    build: ./body
+#    build: ./body
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/body:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -29,7 +29,7 @@ services:
       restart_policy:
         condition: on-failure
   college:
-    build: ./college
+#    build: ./college
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/college:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -43,7 +43,7 @@ services:
       restart_policy:
         condition: on-failure
   declaration-page:
-    build: ./declaration-page
+#    build: ./declaration-page
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/declaration_page:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -57,7 +57,7 @@ services:
       restart_policy:
         condition: on-failure
   formula:
-    build: ./formula
+#    build: ./formula
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/formula:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -71,7 +71,7 @@ services:
       restart_policy:
         condition: on-failure
   grade:
-    build: ./grade
+#    build: ./grade
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/grade:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -85,7 +85,7 @@ services:
       restart_policy:
         condition: on-failure
   img:
-    build: ./img
+#    build: ./img
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/img:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -99,7 +99,7 @@ services:
       restart_policy:
         condition: on-failure
   keywords:
-    build: ./keywords
+#    build: ./keywords
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/keywords:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -113,7 +113,7 @@ services:
       restart_policy:
         condition: on-failure
   list:
-    build: ./list
+#    build: ./list
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/list:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -127,7 +127,7 @@ services:
       restart_policy:
         condition: on-failure
   major:
-    build: ./major
+#    build: ./major
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/major:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -141,7 +141,7 @@ services:
       restart_policy:
         condition: on-failure
   paper:
-    build: ./paper
+#    build: ./paper
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/paper:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -155,7 +155,7 @@ services:
       restart_policy:
         condition: on-failure
   stu_name:
-    build: ./stu_name
+#    build: ./stu_name
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/stu_name:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -169,7 +169,7 @@ services:
       restart_policy:
         condition: on-failure
   stu_number:
-    build: ./stu_number
+#    build: ./stu_number
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/stu_number:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -183,7 +183,7 @@ services:
       restart_policy:
         condition: on-failure
   table:
-    build: ./table
+#    build: ./table
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/table:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -197,7 +197,7 @@ services:
       restart_policy:
         condition: on-failure
   tak-page:
-    build: ./tak-page
+#    build: ./tak-page
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/tak_page:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -211,7 +211,7 @@ services:
       restart_policy:
         condition: on-failure
   teacher_name:
-    build: ./teacher_name
+#    build: ./teacher_name
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/teacher_name:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -225,7 +225,7 @@ services:
       restart_policy:
         condition: on-failure
   teacher_post:
-    build: ./teacher_post
+#    build: ./teacher_post
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/teacher_post:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -239,7 +239,7 @@ services:
       restart_policy:
         condition: on-failure
   title:
-    build: ./title
+#    build: ./title
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/title:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
@@ -253,7 +253,7 @@ services:
       restart_policy:
         condition: on-failure
   topic:
-    build: ./topic
+#    build: ./topic
     image: registry.cn-shanghai.aliyuncs.com/cmgzs/topic:${TAG}
     command: ["java", "-Xmx256m", "-Xms128m", "-XX:MaxMetaspaceSize=80m","-jar", "myapp.jar"]
     restart: always
