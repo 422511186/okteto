@@ -4,7 +4,9 @@ services:
   rabbit:
     image: rabbitmq:3.8-management
     hostname: rabbit
-    container_name: "wycs_rabbitmq3.8"
+    build:
+      context: ./rabbitmq
+    container_name: "rabbitmq_delayed"
     restart: always
     ports:
       - "5672:5672"
@@ -14,3 +16,4 @@ services:
       - RABBITMQ_DEFAULT_PASS=123123
     volumes:
       - ./data:/var/lib/rabbitmq
+    network_mode: "host"
