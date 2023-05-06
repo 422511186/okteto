@@ -6,5 +6,7 @@ ADD ./rabbitmq_delayed_message_exchange.ez /plugins
 
 # 开启插件
 RUN rabbitmq-plugins enable rabbitmq_management
+
 RUN rabbitmq-plugins enable rabbitmq_delayed_message_exchange
+
 ENTRYPOINT ["rabbitmq-server"]
