@@ -7,11 +7,11 @@ ADD ./rabbitmq_delayed_message_exchange.ez /plugins
 RUN rabbitmq-plugins enable rabbitmq_management
 RUN rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 
-# 创建RabbitMQ管理员
-RUN rabbitmqctl add_user root 123123
-RUN rabbitmqctl set_user_tags root administrator
-RUN rabbitmqctl set_permissions -p / root ".*" ".*" ".*"
+# 设置默认用户名和密码
+ENV RABBITMQ_DEFAULT_USER=root
+ENV RABBITMQ_DEFAULT_PASS=123123
 
+# 暴露 RabbitMQ 默认端口
 EXPOSE 5672
 EXPOSE 15672
 
