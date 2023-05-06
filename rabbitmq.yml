@@ -3,7 +3,6 @@ version: '3'
 services:
   rabbit:
     image: rabbitmq:3-management
-    hostname: rabbit
     build:
       context: ./rabbitmq
     container_name: rabbitmq
