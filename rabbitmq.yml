@@ -12,7 +12,8 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=root
       - RABBITMQ_DEFAULT_PASS=123123
-      - TZ="Asia/Shanghai"
+      - SET_CONTAINER_TIMEZONE=true
+      - CONTAINER_TIMEZONE=Asia/Shanghai
     volumes:
       - ./data:/var/lib/rabbitmq
   task:
@@ -21,6 +22,9 @@ services:
     restart: always
     ports: # 指定端口映射
       - "8080:8080"
+    environment:
+      - SET_CONTAINER_TIMEZONE=true
+      - CONTAINER_TIMEZONE=Asia/Shanghai
     deploy:
       resources:
         limits:
