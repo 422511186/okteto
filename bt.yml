@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: your_database_name
+      MYSQL_USER: huangzhenyu
+      MYSQL_PASSWORD: huangzhenyu
+      MYSQL_ROOT_PASSWORD: huangzhenyu
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
+
+  baota:
+    image: baota_panel/baota
+    restart: always
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/www/wwwroot
+    environment:
+      DATABASE_HOST: db
+      DATABASE_NAME: bt_default
+      DATABASE_USERNAME: huangzhenyu
+      DATABASE_PASSWORD: huangzhenyu
+      MYSQL_ROOT_PASSWORD: huangzhenyu
+      USER_PASSWORD: huangzhenyu
+      ADMIN_PASSWORD: huangzhenyu
+      SSH_PASSWORD: huangzhenyu
+    depends_on:
+      - db
